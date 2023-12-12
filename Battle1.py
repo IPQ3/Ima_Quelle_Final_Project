@@ -479,8 +479,6 @@ class Battle1(Character_Select):
         pass
 
 
-
-
     
     elif(self.Turn == 8):
       if(self.character == self.ulya):
