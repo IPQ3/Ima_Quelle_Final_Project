@@ -25,4 +25,3 @@ class Character_Select:
     p5.stroke(0,0,255)
     p5.fill(0,0,135)
     p5.text('Otto',205,270)
-    
