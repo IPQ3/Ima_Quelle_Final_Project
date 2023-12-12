@@ -7,4 +7,4 @@ Ima Quelle's Coding Final
   
   The Beast Mother will then attack. Her attacks are randomised between 4 choices. The first two are attacks that do differeing amounts of damage. The third is an attack that doesnt dock your hp, health points, but it decreases your attack.
   
-  If your hp reaches 0 or her hp is higher then yours, then you lose. If the Beast Mother's hp reaches 0 or if her hp is lower then yours, then you win. Under the win condition you will get an ending.
+  If your hp reaches 0 or her hp is higher then yours, then you lose and the screen will go black. If the Beast Mother's hp reaches 0 or if her hp is lower then yours, then you win. Under the win condition you will get an ending.
