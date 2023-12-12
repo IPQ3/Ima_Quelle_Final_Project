@@ -13,7 +13,6 @@ character_select = Character_Select()
 battle1 = Battle1()
 ending_1 = Ending_1()
 ending_2 = Ending_2()
-ending_1 = Ending_1()
 
 CharacterSelect = p5.loadImage('Character Select.png')
 BattleBackground = p5.loadImage('Battle Background.png')
@@ -567,22 +566,15 @@ def keyPressed(event):
               if(battle1.ATK == 20):
                 battle1.bmHP -= 20
                 print('bmHP =', battle1.bmHP)
-                #f(p5.keyIsPressed == True):
-                  #if(p5.key == ''):
                 battle1.Turn = 9
-                #else:
-                  #pass
+
 
           elif(p5.key == 'd'):
             print('dodge')
             print('bmHP =', battle1.bmHP)
             battle1.bmHP = battle1.bmHP
             print('bmHP =', battle1.bmHP)
-            #f(p5.keyIsPressed == True):
-              #if(p5.key == ''):
             battle1.Turn = 9
-            #else:
-              #pass
 
     elif(battle1.Turn == 9):
       #print('turn 1')
@@ -621,7 +613,6 @@ def keyPressed(event):
             battle1.Turn = 10
 
     elif(battle1.Turn == 10):
-    #print('turn 1')
       if(battle1.character == battle1.otto):
         if(p5.keyIsPressed == True):
           print('key is pressed')
@@ -710,3 +701,4 @@ def mousePressed(event):
 def mouseReleased(event):
   #print('mouseReleased..')
   pass
+
