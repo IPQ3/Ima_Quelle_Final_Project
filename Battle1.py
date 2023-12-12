@@ -3,7 +3,6 @@ from main import *
 from Ending_1 import *
 from Ending_2 import *
 from Characterselect import *
-#character_select = Character_Select()
 ending_1 = Ending_1()
 ending_2 = Ending_2()
 BattleBackground = p5.loadImage('Battle Background.png')
@@ -11,19 +10,19 @@ BattleBackground = p5.loadImage('Battle Background.png')
 class Battle1(Character_Select):
   
   def __init__(self):
-    self.Turns1 = 1
+    self.Turn = 1
     self.ATKR = p5.random(1,3)
     self.ATK = 0
-    self.bmHP = 300
+    self.bmHP = 100
     self.bmDMG = 50
     self.bmSPD = 50
     self.bmDodge = 40
     self.Hands = 2
     self.CallOfTheWild = 3
 
-    self.chHP = 1
-    self.chDMG = 1
-    self.chSPD = 1
+    self.chHP = 150
+    self.chDMG = 30
+    self.chSPD = 40
     self.BATKR = p5.random(1,5) #For random Numbers
     self.BATK = 0  #To assign attack
     self.ATKR = 0
@@ -54,7 +53,6 @@ class Battle1(Character_Select):
     #p5.noLoop()
     #if(p5.mouseIsPressed == True):
     #  self.update(self)
-    #else:
     #  pass
     
 
@@ -74,3 +72,593 @@ class Battle1(Character_Select):
     p5.text('l = low attack',189,20)
     p5.text('h = high attack', 189,40)
     p5.text('d = dodge', 189,60)
+
+    
+    if(self.Turn == 1):
+      if(self.character == self.otto):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 3
+  
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 2
+      
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 2
+      
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 2
+  
+      else:
+        pass
+  
+    if(self.Turn == 2):      
+      if(self.character == self.ulya):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 3
+  
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 3
+      
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 3
+      
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 3
+  
+      else:
+        pass
+
+
+  
+    elif(self.Turn == 3):
+      if(self.character == self.otto):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 4
+  
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -= 25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 4
+      
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 4
+      
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 4
+  
+      else:
+        pass
+
+    
+    elif(self.Turn == 4):
+      if(self.character == self.ulya):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 5
+  
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 5
+      
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 5
+      
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 5
+  
+
+
+    
+    elif(self.Turn == 5):
+      if(self.character == self.otto):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 6
+  
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 6
+      
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+
+
+              self.Turn = 6
+      
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 6
+  
+      else:
+        pass
+
+
+
+
+    
+    elif(self.Turn == 6):
+      if(self.character == self.ulya):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 7
+  
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -= 25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 7
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 7
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 7
+      else:
+        pass
+
+
+
+      
+    elif(self.Turn == 7):
+      if(self.character == self.otto):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 8
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 8
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 8
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 8
+      else:
+        pass
+
+
+
+
+    
+    elif(self.Turn == 8):
+      if(self.character == self.ulya):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 9
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -= 25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 9
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 9
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 9
+      else:
+        pass
+
+
+
+
+    
+    elif(self.Turn == 9):
+      if(self.character == self.otto):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 10
+
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -=25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 10
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 10
+
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 10
+      else:
+        pass
+
+
+
+
+    
+    elif(self.Turn == 10):
+      if(self.character == self.ulya):
+        self.BMATKR = p5.random(1,5)
+        if(self.BMATKR == 1):
+          self.BMATK = self.bite
+          if(self.BMATK == self.bite):
+            self.chHP -= 30
+            print('The Beast Mother bites you.')
+            print('you lose 20 HP.')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 11
+            
+
+
+        elif(self.BMATKR > 2):
+          if(self.BMATKR < 3):
+            self.BMATK = self.Hands
+            if(self.BMATK == self.Hands):
+              self.chHP -= 25
+              print('The Beast Mothers hands squeeze your body')
+              print('you lose 20 HP')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 11
+              
+
+
+        elif(self.BMATKR > 3):
+          if(self.BMATKR < 4):
+            self.BMATK = self.CallOfTheWild
+            if(self.BMATK == self.CallofTheWild):
+              self.chDMG -= 10
+              print('The Beast Mother Howls.')
+              print('your damage decreases by 10.')
+              print('Character HP =', self.chHP)
+              print('Character DMG =', self.chDMG)
+              print('Character SPD =', self.chSPD)
+              self.Turn = 11
+
+        elif(self.BMATKR > 4):
+          self.BMATK = self.dodge
+          if(self.BMATK == self.dodge):
+            print('The Beast Mother dodges your attack')
+            print('Character HP =', self.chHP)
+            print('Character DMG =', self.chDMG)
+            print('Character SPD =', self.chSPD)
+            self.Turn = 11
+      else:
+        pass
+        
+    elif(self.Turn == 11):
+      if(self.bmHP > self.chHP):
+        program_state = 'LOSE'
+        if(program_state == 'LOSE'):
+          Ending_1.draw
+
+      elif(self.bmHP < self.chHP):
+        program_state = 'WIN'
+        if(program_state == 'WIN'):
+          Ending_2.draw
+
+          
+  def keyPressed(self, event):
+    #print('Battle1 keyPressed.. ' + str(p5.key))
+    pass
