@@ -3,7 +3,7 @@ Ima Quelle's Coding Final
 
 Project Description:
 
-  This is a turn base rpg game. You have 5 turns to defeat the Beast Mother. To start the game you press 'e'. You then can choose between two characters, Ulya or Otto, with a mouse click on either of the character. Both have individual stats that will change your experience of the game.
+  This is a turn base rpg game. You have 5 turns, 10 turns in total, to defeat the Beast Mother. To start the game you press 'e'. You then can choose between two characters, Ulya or Otto, with a mouse click on either of the character. Both have individual stats that will change your experience of the game.
 
   Once you choose a character their stats will appear as a print on the screen when the battle begins. Once the battle begins you can choose between three attack options. If you press 'l' then you will hit a low attack. If you press 'h' you will have a chance to either hit a higher damage attack or a low damage attack. If you press 'd' you will dodge the on coming attack.
 
