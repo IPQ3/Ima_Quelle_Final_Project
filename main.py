@@ -29,9 +29,9 @@ def title():
   p5.text('Press e to play',96,150)
 
     
-chHP = 1
-chDMG = 1
-chSPD = 1
+chHP = 150
+chDMG = 30
+chSPD = 40
 
 def setup():
   p5.createCanvas(300, 300)
@@ -81,10 +81,10 @@ def draw():
     battle1.update(program_state)
     #battlestats.draw()
     
-  elif(program_state == 'ENDING_1'):
-    ending_1.draw()
-  elif(program_state == 'ENDING_2'):
-    ending_2.draw()
+  elif(program_state == 'LOSE'):
+    Ending_1.draw
+  elif(program_state == 'WIN'):
+    Ending_2.draw
 
 def keyPressed(event):
   print('keyPressed.. ' + str(p5.key))
@@ -629,12 +629,7 @@ def keyPressed(event):
             print('low attack')
             battle1.bmHP -= 30
             print('bmHP =', battle1.bmHP)
-            if(battle1.bmHP > battle1.chHP):
-              program_state = 'LOSE'
-              Ending_1()
-            elif(battle1.bmHP < battle1.chHP):
-              program_state = 'WIN'
-              Ending_2()
+            self.Turn = 11
           
           elif(p5.key == 'h'):
             print('high attack')
@@ -646,12 +641,7 @@ def keyPressed(event):
               if(battle1.ATK == 30):
                 battle1.bmHP -= 30
                 print('bmHP =', battle1.bmHP)
-                if(battle1.bmHP > battle1.chHP):
-                  program_state = 'LOSE'
-                  Ending_1()
-                elif(battle1.bmHP < battle1.chHP):
-                  program_state = 'WIN'
-                  Ending_2()
+                self.Turn = 11
               
             elif(battle1.ATKR < 1.6):
               print('low roll')
@@ -660,12 +650,7 @@ def keyPressed(event):
               if(battle1.ATK == 20):
                 battle1.bmHP -= 20
                 print('bmHP =', battle1.bmHP)
-                if(battle1.bmHP > battle1.chHP):
-                  program_state = 'LOSE'
-                  Ending_1()
-                elif(battle1.bmHP < battle1.chHP):
-                  program_state = 'WIN'
-                  Ending_2()
+                self.Turn = 11
               
 
           elif(p5.key == 'd'):
@@ -673,12 +658,18 @@ def keyPressed(event):
             print('bmHP =', battle1.bmHP)
             battle1.bmHP = battle1.bmHP
             print('bmHP =', battle1.bmHP)
-            if(battle1.bmHP > battle1.chHP):
-              program_state = 'LOSE'
-              Ending_1()
-            elif(battle1.bmHP < battle1.chHP):
-              program_state = 'WIN'
-              Ending_2()
+            self.Turn = 11
+
+    elif(battle1.Turn == 11):
+      if(battle1.bmHP > battle1.chHP):
+        program_state = 'LOSE'
+        if(program_state == 'LOSE'):
+          Ending_1.draw
+        
+      elif(battle1.bmHP < battle1.chHP):
+        program_state = 'WIN'
+        if(program_state == 'WIN'):
+          Ending_2.draw
           
 
 
@@ -690,7 +681,7 @@ def mousePressed(event):
   #print('mousePressed..')
   global program_state
   if(program_state == 'CHARACTERSELECT'):
-    if(p5.mouseX > 100 and p5.mouseX < 200):
+    if(p5.mouseX > 1 and p5.mouseX < 200):
       character_select.character = character_select.ulya
       program_state = 'BATTLE1'
       print('change program_state to', program_state)
