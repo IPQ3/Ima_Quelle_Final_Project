@@ -19,14 +19,10 @@ class Character_Select:
     p5.stroke(0,0,135)
     p5.fill(0)
     p5.rect(150,265,380,60)
-    p5.stroke(0,255,0)
-    p5.fill(0,135,0)
-    p5.text('Griffith',25,270)
     p5.stroke(255,0,0)
     p5.fill(135,0,0)
-    p5.text('Ulya',135,270)
+    p5.text('Ulya',65,270)
     p5.stroke(0,0,255)
     p5.fill(0,0,135)
-    p5.text('Otto',235,270)
-    
+    p5.text('Otto',205,270)
     
